@@ -13,6 +13,10 @@ RUN /xargo.sh
 COPY qemu.sh /
 RUN /qemu.sh aarch64
 
+COPY install.sh /
+RUN chmod +x /install.sh
+RUN /install.sh
+
 ARG ANDROID_NDK=r25b
 ARG ANDROID_SDK=28
 ARG ANDROID_VERSION=9.0.0_r1
